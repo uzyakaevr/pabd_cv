@@ -1,0 +1,7 @@
+pillow
+tk
+flask
+requests
+numpy
+torch
+torchvision
