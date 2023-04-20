@@ -2,7 +2,24 @@
 Predictive analytics practice repo for computer vision students
 
 ## Bash essential
-https://builtin.com/data-science/bash-commands
+```ls``` - просмотр содержимого текущего каталога.  
+cd - переход в другой каталог.  
+rm - удалить файл / каталог.  
+mv - переместить / переименовать файл.  
+cp - копировать файл.
+mkdir - создать каталог.
+pwd - вывод полного пути текущего каталога.  
+touch - доступ к файлу. Если файла не существует - создание нового.  
+cat - вывод содержимого файла.  
+less - управляемый вывод потока.  
+more - вывод потока по страницам.  
+grep - глобальный поиск по регулярному выражению и печать.  
+curl - сетевой клиент url.  
+which - расположение исполняемой команды.  
+top - менеджер процессов.  
+history - история команд оболочки.  
 
-## Git essential
-https://www.freecodecamp.org/news/10-important-git-commands-that-every-developer-should-know/
+
+## Git essential  
+
+git clone
