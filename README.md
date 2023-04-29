@@ -17,7 +17,7 @@ Predictive analytics practice repo for computer vision students
 Реализация минимального функционала классификации изображений. 
 Тестирование с помощью unittest. 
 
-**Результат:**  pull request c predict необученной модели.
+**Результат:**  pull request c predict необученной модели, предсказывающей три **наиболее** вероятных класса ImageNet.
 
 3. Хранение данных в S3 хранилище. 
 Версионирование данных с DVC. 
