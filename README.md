@@ -15,7 +15,7 @@ Predictive analytics practice repo for computer vision students
 2. Структура ML проекта, шаблонизация cookiecutter ds. 
 Требования к коду: codestyle, linters, formatters, function docs. 
 Реализация минимального функционала классификации изображений. 
-Тестирование с помощью pyunittest. 
+Тестирование с помощью unittest. 
 
 **Результат:**  pull request c predict необученной модели.
 
