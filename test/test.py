@@ -5,9 +5,8 @@ import requests
 from requests import request
 
 
-
 class MyTestCase(unittest.TestCase):
-    def test_200(self):
+    def test_home(self):
         response = requests.request('GET', 'http://localhost:1234/')
         sample = response.content.decode()
         self.assertEqual(sample, 'Home page')  # add assertion here
@@ -16,7 +15,6 @@ class MyTestCase(unittest.TestCase):
         img = PIL.Image.open('../data/dog.jpg')
         buffer = io.BytesIO()
         img.save(buffer, format='JPEG')
-
 
         with buffer as buf:
             buffer.seek(0)
