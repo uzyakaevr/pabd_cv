@@ -1,9 +1,9 @@
 import io
 import unittest
-
 import PIL.Image
 import requests
 from requests import request
+
 
 
 class MyTestCase(unittest.TestCase):
@@ -16,6 +16,7 @@ class MyTestCase(unittest.TestCase):
         img = PIL.Image.open('../data/dog.jpg')
         buffer = io.BytesIO()
         img.save(buffer, format='JPEG')
+
 
         with buffer as buf:
             buffer.seek(0)
