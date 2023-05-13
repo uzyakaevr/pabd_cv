@@ -29,6 +29,7 @@ Predictive analytics practice repo for computer vision students
 Версионирование данных с DVC. 
 CLI python. 
 [Обучение модели.](https://keras.io/examples/vision/image_classification_from_scratch/)
+[Данные](https://drive.google.com/file/d/1PW9uFmww8G9-BwVFwnTitdTFCusx4OuU/view?usp=sharing)
 
 **Результат:** 
 Подключен dvc remote. 
