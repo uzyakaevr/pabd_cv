@@ -27,14 +27,17 @@ Predictive analytics practice repo for computer vision students
 
 3. Работа с данными и обучение модели. 
 Версионирование данных с DVC. 
-CLI python. 
+**Результат:** 
+В проекте подключен dvc, в ветке main  . 
+
+4. CLI python. 
 [Обучение модели.](https://keras.io/examples/vision/image_classification_from_scratch/)
 [Данные](https://drive.google.com/file/d/1PW9uFmww8G9-BwVFwnTitdTFCusx4OuU/view?usp=sharing)
 
 **Результат:** 
-Подключен dvc remote. 
-Реализация скрипта train.py для обучения модели.
-
+Реализация скрипта train.py для обучения модели.  
+Результат обучения (модель) сохраняется локально.  
+Скрипт предсказания использует обученную модель для бинарной классификации.
 
 4. Валидация модели. 
 Добавление новых данных. 
