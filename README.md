@@ -26,7 +26,8 @@ Predictive analytics practice repo for computer vision students
 
 
 3. Работа с данными и обучение модели. 
-Версионирование данных с DVC. 
+Версионирование данных с DVC.  
+
 **Результат:** 
 В проекте подключен dvc, в ветке main  . 
 
