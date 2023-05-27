@@ -16,18 +16,6 @@ def home():
     """ Function docstring """
     return 'Home page'
 
-
-# @app.route('/classify', methods=['POST', 'GET'])
-# def classify():
-#     data = request.data
-#     img = tf.io.decode_jpeg(data)
-#     img_t = tf.expand_dims(img, axis=0)
-#     img_t = tf.image.resize(img_t, (224, 224))
-#     out = resnet(img_t)
-#     idxs = tf.argsort(out, direction='DESCENDING')[0][:3].numpy()
-#     out = ', '.join([categories_ru[int(i)] for i in idxs])
-#     return out
-
 @app.route('/classify/imagenet', methods=['POST', 'GET'])
 def classify_imagenet():
     data = request.data
