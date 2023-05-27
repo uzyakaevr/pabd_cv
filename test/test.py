@@ -40,6 +40,5 @@ class MyTestCase(unittest.TestCase):
         expected = 'Cat'
         self.assertEqual(expected, out)
 
-
 if __name__ == '__main__':
     unittest.main()
