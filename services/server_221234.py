@@ -19,7 +19,6 @@ def home():
     """ Function docstring """
     return 'Home page'
 
-
 @app.route('/classify/imagenet', methods=['POST', 'GET'])
 def classify_imagenet():
     data = request.data
