@@ -1,50 +1,26 @@
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
+from tensorflow.keras.applications.resnet_v2 import ResNet50V2
+from keras.models import Sequential
+from keras.models import Model
+from keras.layers.core import Flatten, Dense, Dropout, Lambda
 
-
+from keras.applications.inception_v3 import InceptionV3
 
 def make_model(input_shape, num_classes):
-    inputs = keras.Input(shape=input_shape)
+    
+    rn50v2 = ResNet50V2(weights='imagenet', include_top=False, input_shape=input_shape)
+    
+    for layer in rn50v2.layers:
+        layer.trainable = False
 
-    # Entry block
-    x = layers.Rescaling(1.0 / 255)(inputs)
-    x = layers.Conv2D(128, 3, strides=2, padding="same")(x)
-    x = layers.BatchNormalization()(x)
-    x = layers.Activation("relu")(x)
+    rn50v2 = Sequential([
+        rn50v2,
+        Flatten(),
+        Dense(1024, activation = 'relu'),
+        Dropout(0.4),
+        Dense(num_classes, activation = 'softmax')])
 
-    previous_block_activation = x  # Set aside residual
 
-    for size in [256, 512, 728]:
-        x = layers.Activation("relu")(x)
-        x = layers.SeparableConv2D(size, 3, padding="same")(x)
-        x = layers.BatchNormalization()(x)
-
-        x = layers.Activation("relu")(x)
-        x = layers.SeparableConv2D(size, 3, padding="same")(x)
-        x = layers.BatchNormalization()(x)
-
-        x = layers.MaxPooling2D(3, strides=2, padding="same")(x)
-
-        # Project residual
-        residual = layers.Conv2D(size, 1, strides=2, padding="same")(
-            previous_block_activation
-        )
-        x = layers.add([x, residual])  # Add back residual
-        previous_block_activation = x  # Set aside next residual
-
-    x = layers.SeparableConv2D(1024, 3, padding="same")(x)
-    x = layers.BatchNormalization()(x)
-    x = layers.Activation("relu")(x)
-
-    x = layers.GlobalAveragePooling2D()(x)
-    if num_classes == 2:
-        activation = "sigmoid"
-        units = 1
-    else:
-        activation = "softmax"
-        units = num_classes
-
-    x = layers.Dropout(0.5)(x)
-    outputs = layers.Dense(units, activation=activation)(x)
-    return keras.Model(inputs, outputs)
+    return rn50v2
