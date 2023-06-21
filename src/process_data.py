@@ -10,8 +10,8 @@ import splitfolders
 
 
 @click.command()
-@click.option('-i', '--in_dir', default='data\\raw\\train')
-@click.option('-o', '--out_dir', default='data\\processed\\Petimages')
+@click.option('-i', '--in_dir', default='data/raw/train')
+@click.option('-o', '--out_dir', default='data/processed/Petimages')
 @click.option('-n', '--n_img', default=200)
 @click.option('-s', '--img_size', default=180)
 def process_data(in_dir, out_dir, n_img, img_size):
