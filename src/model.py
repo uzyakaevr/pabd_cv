@@ -3,10 +3,8 @@ from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras.applications.resnet_v2 import ResNet50V2
 from keras.models import Sequential
-from keras.models import Model
-from keras.layers.core import Flatten, Dense, Dropout, Lambda
+from keras.layers.core import Flatten, Dense, Dropout
 
-from keras.applications.inception_v3 import InceptionV3
 
 def make_model(input_shape, num_classes):
     

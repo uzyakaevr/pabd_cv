@@ -7,8 +7,8 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.applications.xception import preprocess_input  
 
 @click.command()
-@click.option('-i', '--in_dir', default="data\\processed\\PetImages")
-@click.option('-o', '--out_dir', default="models\\my_model")
+@click.option('-i', '--in_dir', default="data/processed/PetImages")
+@click.option('-o', '--out_dir', default="models/my_model")
 @click.option('-e', '--epochs', default=5)
 @click.option('-l', '--lr', default=1e-3)
 @click.option('-b', '--batch_size', default=64)
@@ -20,8 +20,8 @@ def train(in_dir, out_dir, epochs, lr, batch_size, image_size):
 
 def train_model(in_dir, out_dir, epochs, lr, batch_size, image_size):
     
-    train_dir = 'data\\processed\\PetImages\\train'
-    val_dir = 'data\\processed\\PetImages\\test'
+    train_dir = in_dir
+    val_dir = 'data/processed/PetImages/test'
 
     train_data_gen = ImageDataGenerator(preprocessing_function=preprocess_input,
                                     rotation_range=10,
